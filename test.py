@@ -14,7 +14,7 @@ class_names = [
 # Load model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = timm.create_model("rexnet_150", pretrained=False, num_classes=len(class_names))
-model.load_state_dict(torch.load("vehicles_best_model.pth", map_location=device))
+model.load_state_dict(torch.load("model.pth", map_location=device))
 model = model.to(device)
 model.eval()
 
